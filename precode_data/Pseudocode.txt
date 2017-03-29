@@ -1,0 +1,22 @@
+Task 1. 
+
+Implement class Country
+	def __init__(self, name, pop, area, continent) :
+		name: string
+		population: integer
+		area: float
+		continent: string
+	def __repr__(self) :
+		generates a string representation for the class (e.g. China is in Asia with a population density of 4.56)
+	def setPopulation(self, pop) :
+		sets population size - an integer
+	def getName(self) :
+		gets name
+	def getArea(self) :
+		gets area of country (i.e. name) 
+	def getPopulation(self) :
+		gets population of country (i.e. name)
+	def getContinent(self) :
+		gets continent
+	def getPopDensity(self) :
+		gets population density —> population / area
