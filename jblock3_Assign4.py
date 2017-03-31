@@ -33,3 +33,17 @@ print(c1.getPopulation())
 print(c1.getContinent())
 print(c1.getPopDensity())
 c1.__repr__()
+
+class CountryCatalogue :
+    def __init__(self, filename) :
+    def filterCountriesByContinent(self) :
+    def printCountryCatalogue(self) :
+    def findCountry(self) :
+    def deleteCountry(self) :
+    def addCountry(self) :
+    def setPopulationOfASelectedCountry(self) :
+    def saveCountryCatalogue(self, filename) :
+    def findCountryWithLargestPop(self) :
+    def findCountryWithSmallestArea(self) :
+    def findMostPopulousContinent(self) :
+    def filterCountriesByPopDensity(self) :
