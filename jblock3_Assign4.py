@@ -60,12 +60,20 @@ class CountryCatalogue :
             splitLine2[1] = tempPopulation
             splitLine2[2] = tempArea
             self._catalogue[splitLine[0]] = splitLine2[1], splitLine2[2]
+        userFile.close()
 
     def filterCountriesByContinent(self) :
     def printCountryCatalogue(self) :
     def findCountry(self) :
     def deleteCountry(self) :
     def addCountry(self) :
+        valid = False
+        while not valid :
+            countryInput = input('Please enter the name of the country you wish to add: ')
+            if countryInput in self._catalogue :
+                
+
+
     def setPopulationOfASelectedCountry(self) :
     def saveCountryCatalogue(self, filename) :
     def findCountryWithLargestPop(self) :
