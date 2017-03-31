@@ -36,6 +36,13 @@ c1.__repr__()
 
 class CountryCatalogue :
     def __init__(self, filename) :
+        self._catalogue = {}
+        self._cDictionary = {}
+        catalogue = open(filename, 'r')
+        for line in catalogue :
+            splitLine = line.split(':')
+            catalogue[splitLine[0]] = splitLine[1]
+
     def filterCountriesByContinent(self) :
     def printCountryCatalogue(self) :
     def findCountry(self) :
