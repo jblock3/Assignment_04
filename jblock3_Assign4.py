@@ -36,12 +36,20 @@ c1.__repr__()
 
 class CountryCatalogue :
     def __init__(self, filename) :
-        self._catalogue = {}
+        self._catalogue = []
         self._cDictionary = {}
-        infile = open(filename, 'r')
-        for line in infile :
+        continentFile = open('continent.txt', 'r')
+        tempCountry = ''
+        tempContinent = ''
+        for line in continentFile :
             splitLine = line.split(',')
-            self._cDictionary[splitLine[0]] = splitLine[1]
+            splitLine[0] = tempCountry
+            splitLine[1] = tempContinent
+            self._cDictionary = dict(tempCountry, tempContinent)
+        continentFile.close()
+        userFile = open(filename, 'r')
+        for line in userFile :
+
 
     def filterCountriesByContinent(self) :
     def printCountryCatalogue(self) :
