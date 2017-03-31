@@ -46,7 +46,7 @@ class CountryCatalogue :
             splitLine = line.split(',')
             splitLine[0] = tempCountry
             splitLine[1] = tempContinent
-            self._cDictionary = dict(tempCountry, tempContinent)
+            self._cDictionary[tempCountry] = tempContinent
         continentFile.close()
 
         tempCountry2 = ''
@@ -71,7 +71,14 @@ class CountryCatalogue :
         while not valid :
             countryInput = input('Please enter the name of the country you wish to add: ')
             if countryInput in self._catalogue :
-                
+                valid = True
+                populationInput = int(input('What is the population of the country? '))
+                areaInput = float(input('Area of the country is: '))
+                continentInput = input('What continent is the country in? ')
+                self._catalogue[countryInput] = populationInput, areaInput
+                self._cDictionary[countryInput] = continentInput
+            else :
+                print('That country already exists in the catalogue!')
 
 
     def setPopulationOfASelectedCountry(self) :
