@@ -34,15 +34,16 @@ print(c1.getContinent())
 print(c1.getPopDensity())
 c1.__repr__()
 
-class CountryCatalogue :
-    def __init__(self, filename) :
-        self._catalogue = {}
-        self._cDictionary = {}
+
+class CountryCatalogue:
+    def __init__(self, filename, catalogue=dict(), dictionary=dict()):
+        self._catalogue = catalogue
+        self._cDictionary = dictionary
         tempCountry = ''
         tempContinent = ''
         continentFile = open('continent.txt', 'r')
         continentLines = continentFile.readlines()[1:]
-        for line in continentFile :
+        for line in continentFile:
             splitLine = line.split(',')
             splitLine[0] = tempCountry
             splitLine[1] = tempContinent
@@ -54,7 +55,7 @@ class CountryCatalogue :
         tempArea = 0.0
         userFile = open(filename, 'r')
         userFileLines = userFile.readlines()[1:]
-        for line in userFile :
+        for line in userFile:
             splitLine2 = line.split('|')
             splitLine[0] = tempCountry2
             splitLine2[1] = tempPopulation
