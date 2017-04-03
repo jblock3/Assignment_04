@@ -25,15 +25,6 @@ class Country :
     def getPopDensity(self) :
         return self._population / self._area
 
-c1 = Country('China', 1000000000, 9.597, 'Asia')
-print(c1.setPopulation(1000000000))
-print(c1.getName())
-print(c1.getArea())
-print(c1.getPopulation())
-print(c1.getContinent())
-print(c1.getPopDensity())
-c1.__repr__()
-
 
 class CountryCatalogue:
     def __init__(self, filename):
