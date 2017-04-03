@@ -17,9 +17,9 @@ class CountryCatalogue:
             splitLine2 = stripLine2.split('|')
             self._catalogue[splitLine2[0]] = [splitLine2[1], splitLine2[2]]
         userFile.close()
-    def __repr__(self):
-        print(self._cDictionary)
-        print(self._catalogue)
+
+    def tester(self, key):
+        return self._catalogue[key]
 
 c1 = CountryCatalogue('data.txt')
 c1.__repr__()
