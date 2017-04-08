@@ -5,13 +5,13 @@
 # Task 1: Implementation of Country class
 
 class Country :
-    def __init__(self, name, pop, area, continent) :
+    def __init__(self, name, pop, area, continent = '') :
         self._name = name
         self._population = pop
         self._area = area
         self._continent = continent
     def __repr__(self) :
-        print(self._name, 'is in', self._continent, 'with a population density of', self._population / self._area)
+        return ('{} is in {} with a population density of {}').format(self._name, self._continent, self._population / self._area)
     def setPopulation(self, pop) :
         self._population = pop
     def getName(self) :
@@ -47,7 +47,8 @@ class CountryCatalogue:
             commaStrip2 = splitLine2[2].replace(',', '')
             num1 = int(commaStrip1)
             num2 = float(commaStrip2)
-            self._catalogue[splitLine2[0]] = [num1, num2]
+            self._catalogue[splitLine2[0]] = Country(splitLine2[0], num1, num2)
+
         userFile.close()
 
     def filterCountriesByContinent(self) :
@@ -57,13 +58,16 @@ class CountryCatalogue:
                 print(key)
         else :
             print('That continent does not have any stored countries in the catalogue')
+
     def printCountryCatalogue(self) :
+
     def findCountry(self) :
         countryInput = input('Please enter the name of the country you are looking for: ')
         if countryInput in self._catalogue :
             return self._catalogue[countryInput]
         else :
             print('That country does not exist in the catalogue')
+
     def deleteCountry(self) :
         countryInput = input('Please enter the name of the country you wish to delete: ')
         if countryInput in self._catalogue :
@@ -88,8 +92,13 @@ class CountryCatalogue:
                 self._cDictionary[countryInput] = continentInput
 
     def setPopulationOfASelectedCountry(self) :
+
     def saveCountryCatalogue(self, filename) :
+
     def findCountryWithLargestPop(self) :
+
     def findCountryWithSmallestArea(self) :
+
     def findMostPopulousContinent(self) :
+
     def filterCountriesByPopDensity(self) :
