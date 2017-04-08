@@ -38,32 +38,54 @@ class CountryCatalogue:
             splitLine = stripLine.split(',')
             self._cDictionary[splitLine[0]] = splitLine[1]
 
-        userFile = open('data.txt', 'r')
+        userFile = open(filename, 'r')
         userFile.readline()
         for line2 in userFile :
             stripLine2 = line2.rstrip('\n')
             splitLine2 = stripLine2.split('|')
-            self._catalogue[splitLine2[0]] = [splitLine2[1], splitLine2[2]]
+            commaStrip1 = splitLine2[1].replace(',', '')
+            commaStrip2 = splitLine2[2].replace(',', '')
+            num1 = int(commaStrip1)
+            num2 = float(commaStrip2)
+            self._catalogue[splitLine2[0]] = [num1, num2]
         userFile.close()
 
     def filterCountriesByContinent(self) :
+        continentInput = input('Please enter the continent name: ')
+        for key in self._cDictionary :
+            if self._cDictionary[key] == continentInput :
+                print(key)
+        else :
+            print('That continent does not have any stored countries in the catalogue')
     def printCountryCatalogue(self) :
     def findCountry(self) :
+        countryInput = input('Please enter the name of the country you are looking for: ')
+        if countryInput in self._catalogue :
+            return self._catalogue[countryInput]
+        else :
+            print('That country does not exist in the catalogue')
     def deleteCountry(self) :
+        countryInput = input('Please enter the name of the country you wish to delete: ')
+        if countryInput in self._catalogue :
+            self._cDictionary.pop(countryInput)
+            self._catalogue.pop(countryInput)
+            print('Country was deleted')
+        else :
+            print('That country does not exist in the catalogue')
+
     def addCountry(self) :
         valid = False
         while not valid :
             countryInput = input('Please enter the name of the country you wish to add: ')
             if countryInput in self._catalogue :
+                print('That country already exists in the catalogue!')
+            else :
                 valid = True
                 populationInput = int(input('What is the population of the country? '))
                 areaInput = float(input('Area of the country is: '))
                 continentInput = input('What continent is the country in? ')
                 self._catalogue[countryInput] = populationInput, areaInput
                 self._cDictionary[countryInput] = continentInput
-            else :
-                print('That country already exists in the catalogue!')
-
 
     def setPopulationOfASelectedCountry(self) :
     def saveCountryCatalogue(self, filename) :
