@@ -25,9 +25,9 @@ class Country :
     def getPopDensity(self) :
         return self._population / self._area
 
-
+# Task 2: creation of the CountryCatalogue class
 class CountryCatalogue:
-    def __init__(self, filename):
+    def __init__(self, filename):   # Constructor
         self._catalogue = {}
         self._cDictionary = {}
 
@@ -38,7 +38,7 @@ class CountryCatalogue:
             splitLine = stripLine.split(',')
             self._cDictionary[splitLine[0]] = splitLine[1]
 
-        userFile = open(filename, 'r')
+        userFile = open(filename, 'r')      # Will be used to open the data.txt file
         userFile.readline()
         for line2 in userFile :
             stripLine2 = line2.rstrip('\n')
@@ -64,14 +64,14 @@ class CountryCatalogue:
             tempCountry = Country(key, self._catalogue[key][0], self._catalogue[key][1], self._cDictionary[key])
             tempCountry.__repr__()
 
-    def findCountry(self) :
+    def findCountry(self) :     # Finds country in catalogue, if it exists
         countryInput = input('Please enter the name of the country you are looking for: ')
         if countryInput in self._catalogue :
             return self._catalogue[countryInput]
         else :
             print('That country does not exist in the catalogue')
 
-    def deleteCountry(self) :
+    def deleteCountry(self) :       # Deletes an already existing country in catalogue
         countryInput = input('Please enter the name of the country you wish to delete: ')
         if countryInput in self._catalogue :
             self._cDictionary.pop(countryInput)
@@ -80,7 +80,7 @@ class CountryCatalogue:
         else :
             print('That country does not exist in the catalogue')
 
-    def addCountry(self) :
+    def addCountry(self) :      # Adds new country to catalogue if it doesn't exist yet
         valid = False
         while not valid :
             countryInput = input('Please enter the name of the country you wish to add: ')
@@ -143,3 +143,5 @@ class CountryCatalogue:
         for key in self._catalogue :
             if self._catalogue[key][1] > int(lowerBound) and self._catalogue[key][1] < int(upperBound) :
                 print(key)
+
+# End of assignment
