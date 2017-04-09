@@ -103,8 +103,18 @@ class CountryCatalogue:
     def saveCountryCatalogue(self, filename) :
 
     def findCountryWithLargestPop(self) :
+        largest = 0
+        for key in self._catalogue :
+            if self._catalogue[key[1]] > largest :
+                largest = self._catalogue[key[1]]
+        print(largest)
 
     def findCountryWithSmallestArea(self) :
+        smallest = 40000000000000000.0    # Just picked an arbitrarily large number to compare to
+        for key in self._catalogue :
+            if self._catalogue[key[2]] < smallest :
+                smallest = self._catalogue[key[2]]
+        print(smallest)
 
     def findMostPopulousContinent(self) :
 
