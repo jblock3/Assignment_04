@@ -60,6 +60,9 @@ class CountryCatalogue:
             print('That continent does not have any stored countries in the catalogue')
 
     def printCountryCatalogue(self) :
+        for key in self._catalogue :
+            tempCountry = Country(key, self._catalogue[key[1]], self._catalogue[key[2]], self._cDictionary[key])
+            tempCountry.__repr__()
 
     def findCountry(self) :
         countryInput = input('Please enter the name of the country you are looking for: ')
@@ -106,7 +109,7 @@ class CountryCatalogue:
             name = key
             continent = self._cDictionary[key]
             population = self._catalogue[key[1]]
-            populationDens = self._catalogue[key[1]] / self._catalogue[key[2]]
+            populationDens = round(self._catalogue[key[1]] / self._catalogue[key[2]], 2)
             catalogueFile.write('{}|{}|{}|{}'.format(name, continent, population, populationDens))
 
         catalogueFile.close()
