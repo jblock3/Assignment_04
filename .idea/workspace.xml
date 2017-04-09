@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="40649971-31cf-4497-b09c-10131cc8744b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jblock3_Assign4.py" afterPath="$PROJECT_DIR$/jblock3_Assign4.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tester.py" afterPath="$PROJECT_DIR$/tester.py" />
     </list>
     <ignored path="Assignment_04.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,8 +25,8 @@
       <file leaf-file-name="jblock3_Assign4.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jblock3_Assign4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="66" column="48" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="48" />
+            <state relative-caret-position="290">
+              <caret line="100" column="63" selection-start-line="100" selection-start-column="63" selection-end-line="100" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -547,8 +546,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jblock3_Assign4.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="66" column="48" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="48" />
+        <state relative-caret-position="290">
+          <caret line="100" column="63" selection-start-line="100" selection-start-column="63" selection-end-line="100" selection-end-column="63" />
           <folding />
         </state>
       </provider>

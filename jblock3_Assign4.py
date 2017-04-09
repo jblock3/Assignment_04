@@ -92,6 +92,13 @@ class CountryCatalogue:
                 self._cDictionary[countryInput] = continentInput
 
     def setPopulationOfASelectedCountry(self) :
+        countryInput = input('Please enter the country name: ')
+        if countryInput in self._catalogue :
+            newPopulation = int(input('Enter the new population: '))
+            self._catalogue[countryInput].replace(countryInput(1), newPopulation)
+            print('The new population is {}'.format(newPopulation))
+        else :
+            print('That country does not exist in the catalogue')
 
     def saveCountryCatalogue(self, filename) :
 
