@@ -101,6 +101,15 @@ class CountryCatalogue:
             print('That country does not exist in the catalogue')
 
     def saveCountryCatalogue(self, filename) :
+        catalogueFile = open(filename, 'w')
+        for key in self._catalogue :
+            name = key
+            continent = self._cDictionary[key]
+            population = self._catalogue[key[1]]
+            populationDens = self._catalogue[key[1]] / self._catalogue[key[2]]
+            catalogueFile.write('{}|{}|{}|{}'.format(name, continent, population, populationDens))
+
+        catalogueFile.close()
 
     def findCountryWithLargestPop(self) :
         largest = 0
@@ -124,7 +133,7 @@ class CountryCatalogue:
                 country = key
         continent = self._cDictionary[country]
         print(continent)
-        
+
     def filterCountriesByPopDensity(self) :
         lowerBound = input('Enter the lower bound for the population density range: ')
         upperBound = input('Enter the upper bound for the population density range: ')
