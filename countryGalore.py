@@ -61,7 +61,7 @@ class CountryCatalogue:
 
     def printCountryCatalogue(self) :
         for key in self._catalogue :
-            tempCountry = Country(key, self._catalogue[key[1]], self._catalogue[key[2]], self._cDictionary[key])
+            tempCountry = Country(key, self._catalogue[key][0], self._catalogue[key][1], self._cDictionary[key])
             tempCountry.__repr__()
 
     def findCountry(self) :
@@ -108,8 +108,8 @@ class CountryCatalogue:
         for key in self._catalogue :
             name = key
             continent = self._cDictionary[key]
-            population = self._catalogue[key[1]]
-            populationDens = round(self._catalogue[key[1]] / self._catalogue[key[2]], 2)
+            population = self._catalogue[key][0]
+            populationDens = round(self._catalogue[key][0] / self._catalogue[key][1], 2)
             catalogueFile.write('{}|{}|{}|{}'.format(name, continent, population, populationDens))
 
         catalogueFile.close()
@@ -117,22 +117,22 @@ class CountryCatalogue:
     def findCountryWithLargestPop(self) :
         largest = 0
         for key in self._catalogue :
-            if self._catalogue[key[1]] > largest :
-                largest = self._catalogue[key[1]]
+            if self._catalogue[key][0] > largest :
+                largest = self._catalogue[key][0]
         print(largest)
 
     def findCountryWithSmallestArea(self) :
         smallest = 40000000000000000.0    # Just picked an arbitrarily large number to compare to other values
         for key in self._catalogue :
-            if self._catalogue[key[2]] < smallest :
-                smallest = self._catalogue[key[2]]
+            if self._catalogue[key][1] < smallest :
+                smallest = self._catalogue[key][1]
         print(smallest)
 
     def findMostPopulousContinent(self) :
         largest = 0
         for key in self._catalogue :
-            if self._catalogue[key[1]] > largest :
-                largest = self._catalogue[key[1]]
+            if self._catalogue[key][0] > largest :
+                largest = self._catalogue[key][0]
                 country = key
         continent = self._cDictionary[country]
         print(continent)
@@ -141,5 +141,5 @@ class CountryCatalogue:
         lowerBound = input('Enter the lower bound for the population density range: ')
         upperBound = input('Enter the upper bound for the population density range: ')
         for key in self._catalogue :
-            if self._catalogue[key[2]] > int(lowerBound) and self._catalogue[key[2]] < int(upperBound) :
+            if self._catalogue[key][1] > int(lowerBound) and self._catalogue[key][1] < int(upperBound) :
                 print(key)
