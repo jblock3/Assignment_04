@@ -124,4 +124,10 @@ class CountryCatalogue:
                 country = key
         continent = self._cDictionary[country]
         print(continent)
+        
     def filterCountriesByPopDensity(self) :
+        lowerBound = input('Enter the lower bound for the population density range: ')
+        upperBound = input('Enter the upper bound for the population density range: ')
+        for key in self._catalogue :
+            if self._catalogue[key[2]] > int(lowerBound) and self._catalogue[key[2]] < int(upperBound) :
+                print(key)
